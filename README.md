@@ -1,8 +1,7 @@
 # AwesomeDistanceCalculator
+[![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)](http://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/awesome_distance_calculator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+AwesomeDistanceCalculator gem, as its name indicates, it severs the purpose of calculating the distance between two given positions using the haversin formula.
 
 ## Installation
 
@@ -22,7 +21,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You could either use in you terminal for easy calculations by:
+
+```shell
+$ ./bin/console
+```
+and then:
+```ruby
+AwesomeDistanceCalculator::Harvesin.call([53.339428, -6.257664], [52.986375, -6.043701])
+```
+Or  also by including it in any wrapper/facade calculator class in your application
+```ruby
+class MyClass
+    include AwesomeDistanceCalculator
+end
+```
+That will add the `.calculate`method on your newly created class, so you could as follows:
+```ruby
+calculator = MyClass.new
+calculator.calculate(coordinates: [[53.339428, -6.257664], [52.986375, -6.043701]])
+```
 
 ## Development
 
@@ -32,7 +50,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/awesome_distance_calculator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/tiarly/awesome_distance_calculator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -40,4 +58,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the AwesomeDistanceCalculator project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/awesome_distance_calculator/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the AwesomeDistanceCalculator project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/tiarly/awesome_distance_calculator/blob/master/CODE_OF_CONDUCT.md).
