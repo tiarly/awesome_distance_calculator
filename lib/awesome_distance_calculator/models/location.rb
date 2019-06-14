@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module AwesomeDistanceCalculator
   module CoreExt
     refine Numeric do
       def to_rad
-        self * Math::PI/180
+        self * Math::PI / 180
       end
     end
   end
@@ -32,7 +34,7 @@ module AwesomeDistanceCalculator
     end
 
     def to_r
-      [lat, long].map { |x| x.to_rad }
+      [lat, long].map(&:to_rad)
     end
   end
 end

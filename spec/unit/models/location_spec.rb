@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AwesomeDistanceCalculator
   RSpec.describe Location do
     let(:instance) { described_class.new(42.23, -5.54) }
@@ -8,7 +10,7 @@ module AwesomeDistanceCalculator
       end
 
       it 'allows reading for Longitude' do
-        expect(instance.long).to eql -5.54
+        expect(instance.long).to eql(-5.54)
       end
     end
 

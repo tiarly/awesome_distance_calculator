@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AwesomeDistanceCalculator
   RSpec.describe Haversine do
     context '#call' do
