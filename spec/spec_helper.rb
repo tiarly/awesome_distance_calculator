@@ -1,4 +1,5 @@
 require "bundler/setup"
+require 'support/coverage'
 require "awesome_distance_calculator"
 
 RSpec.configure do |config|
