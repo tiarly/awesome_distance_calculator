@@ -1,6 +1,19 @@
-require "awesome_distance_calculator/version"
+require 'awesome_distance_calculator/version'
+require 'awesome_distance_calculator/models/location'
+require 'awesome_distance_calculator/strategies/haversine'
 
 module AwesomeDistanceCalculator
-  class Error < StandardError; end
-  # Your code goes here...
+  StrategyNotYetImplemented = Class.new(StandardError)
+  Strategies = {
+    'haversine' => Haversine
+  }.freeze
+
+  def calculate(coordinates:, strategy: 'haversine')
+    strat = Strategies.fetch(strategy)
+
+    strat.call(*coordinates)
+
+  rescue KeyError => e
+    raise StrategyNotYetImplemented.new(e)
+  end
 end
