@@ -18,6 +18,7 @@ module AwesomeDistanceCalculator
       private
 
       # rubocop:disable Metrics/AbcSize
+      # This method smells of :reek:UncommunicativeVariableName
       def delta_for(locations)
         rlat1, rlong1, rlat2, rlong2 =
           Location.for_multi(locations).map(&:to_r).flatten

@@ -10,6 +10,7 @@ module AwesomeDistanceCalculator
     'haversine' => Haversine
   }.freeze
 
+  # This method smells of :reek:UncommunicativeVariableName
   def calculate(coordinates:, strategy: 'haversine')
     strat = STRATEGIES.fetch(strategy)
 
